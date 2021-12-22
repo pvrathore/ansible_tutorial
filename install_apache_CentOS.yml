@@ -1,0 +1,10 @@
+---
+
+- hosts: all
+  become: true
+  tasks:
+
+  - name: install apache2 package
+    yum:
+      name: httpd
+    when: ansible_distribution == "CentOS" and ansible_distribution_version == "7.9"
