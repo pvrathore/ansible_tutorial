@@ -1,0 +1,14 @@
+---
+
+- hosts: all
+  become: true
+  tasks:
+
+  - name: install httpd and tcpdump package for CentOS
+    yum:
+      name:
+        - httpd
+        - tcpdump
+      state: latest
+      update_cache: yes
+    when: ansible_distribution == "CentOS"
