@@ -7,3 +7,4 @@
   - name: install apache2 package
     yum:
       name: httpd
+    when: ansible_distribution == "Ubuntu"
